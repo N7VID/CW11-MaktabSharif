@@ -29,7 +29,7 @@ export const home = async function (country) {
 
   const homePage = `
   <div>
-    <h1 class="flex justify-around text-5xl mt-12 mx-auto text-white font-bold">
+    <h1 class="flex justify-around text-5xl mt-12 mx-auto text-white font-bold cursor-default">
       Country List
     </h1>
   </div>
@@ -51,16 +51,16 @@ export const home = async function (country) {
     </div>
   </div>
 
-<div id="cards" class="grid grid-cols-4 gap-12 mx-auto mt-20 mb-12 max-w-6xl">
+<div id="cards" class="grid grid-cols-5 gap-8 mx-auto mt-20 mb-12 max-w-6xl">
   ${countries
     .map((item) => {
       return `
-  <div class="bg-[#D9D9D9] rounded-2xl overflow-hidden flex justify-center flex-col items-center">
-    <div>
-      <img src="${item.flag.large}" class=" object-cover w-52" />
+  <div class="bg-neutral-200 hover:bg-[#ffffff] transition duration-500 rounded-xl overflow-hidden flex justify-center flex-col items-center">
+    <div class="mt-4">
+      <img src="${item.flag.large}" class="object-cover w-32" />
     </div>
-    <div class="font-extrabold text-lg py-4 text-center">${item.name}</div>
-    <div class="mb-4 bg-[#1400FF] rounded-2xl text-white px-8 py-2 cursor-pointer hover:bg-[#040c45] transition">
+    <div class="font-bold text-lg py-4 text-center cursor-default">${item.name}</div>
+    <div class="mb-4 bg-[#1400FF] rounded-2xl text-white px-4 py-2 cursor-pointer hover:bg-[#040c45] transition duration-150">
       <a data-navigo href="/single?name=${item.name}">Show Details</a>
     </div>
   </div>
